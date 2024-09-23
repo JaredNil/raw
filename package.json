@@ -1,0 +1,37 @@
+{
+  "name": "TrackerVT",
+  "productName": "TrackerVT",
+  "version": "1.1.0",
+  "description": "TrackerVT",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make --asar.unpackDir=unpack --overwrite --icon=public/favicon.ico",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "child_process": "^1.0.2",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-websocket-stream": "^2.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "31.3.1"
+  },
+  "keywords": [],
+  "author": "JaredNill",
+  "license": "MIT",
+  "win": {
+    "icon": "./public/logo192.png"
+  }
+}

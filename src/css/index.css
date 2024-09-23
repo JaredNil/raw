@@ -1,0 +1,494 @@
+/* roboto-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+  url('./../fonts/Roboto-Light.ttf') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+  url('./../fonts/Roboto-Medium.ttf') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+@font-face {
+  font-family: 'Ruberoid SemiBold Oblique';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+  url('./../fonts/Ruberoid-SemiBold.ttf') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+  
+*{
+    font-family: 'Roboto' ;
+}
+body{ 
+  background-color: #FFCC99;
+}
+
+  
+.header{
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.header__logo{
+  height: 140px;
+  user-select: none;
+  pointer-events: none;
+}
+.header__desk {
+  padding: 22px 0 6px 14px;
+  font-size: 16px;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Ruberoid SemiBold Oblique';
+  letter-spacing: 0.3px;
+}
+.header__desk span {
+  line-height: 22px;
+  text-align: center;
+}
+.header__clicker{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 101;
+}
+@media (max-height:970px) {
+  .header{
+    transform: translateY(-25px) translateX(-50%) scale(0.7);
+  }
+  .footer{
+    display: none;
+  }
+}
+@media (max-height:680px) {
+  .header{
+    transform: translateY(-40px) translateX(-50%) scale(0.5);
+  }
+  .footer{
+    display: none;
+  }
+}
+@media (max-height:480px) {
+  .header{
+    transform: translateY(-25px) translateX(-50%) scale(0.5);
+  }
+  .footer{
+    display: none;
+  }
+}
+
+
+/* Ширина контента не превышает ширину и высоту окна приложения */
+.application{
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* Каждый слайс - является отдельным виджетом с независимым
+позиционнированием относительно ширины контента
+*/
+.slice{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+/* intro - слайс где отображены инструменты для 
+выбора режима работы приложения */
+
+.intro{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.intro h2{
+  width: 100%;  
+  text-align: center;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 74px;
+}
+.blocks{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+
+
+.block{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.block_title{
+  position: absolute;
+  text-align: center;
+  text-align: center;
+  width: 100%;
+
+  font-size: 22px;
+
+}
+
+.iconBlock{
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+
+}  
+svg {
+  width: 40%;
+  max-height: 80%;
+  height: auto;
+  transition: all 0.2s ease 0s;
+}
+
+
+.stream:hover .iconBlock svg{
+  transform: scale(1.03);
+}
+.file:hover .iconBlock svg{
+  transform: scale(1.03);
+}
+.stream::after,
+.file::before{
+  content: '';
+  position: absolute;
+  top: 12%;
+  right: 1px;
+  background-color: rgba(141, 141, 141, 0.327);
+  width: 2px;
+  height: 74%;
+}
+/* .stream::before
+{
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 1px;
+  background-color: rgba(141, 141, 141, 0.327);
+  width: 2px;
+  height: 74%;
+}
+.iconBlock::after{
+  content: '';
+  position: absolute;
+  left: 12%;
+  bottom: -5px;
+  background-color: rgba(141, 141, 141, 0.327);
+  height: 2px;
+  width: 74%;
+} */
+
+
+.inputwrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.inputStream-button,
+.inputFile-button
+{
+ font-size: 14px;
+ color: black;
+ font-weight: 500;
+ background-color: antiquewhite;
+ border-radius: 4px;
+ padding: 4px 6px;
+}
+.inputwrapper button{
+  cursor: pointer;
+}
+
+.inputStream input{
+  border: solid 1px black;
+  width: 70%;
+  background-color: darkgrey;
+  padding: 4px 6px;
+  color: antiquewhite;
+}
+.inputStream input::placeholder{
+  color: rgba(250, 235, 215, 0.564);
+}
+
+.intro .footer{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8px;
+  width: 80%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  line-height: 22px;
+
+  user-select: none;
+}
+.intro .footer span{
+ font-weight: 500;
+}
+
+
+
+.video{
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+
+  pointer-events: none;
+}
+.video__wrapper{
+  height: 60%;
+  z-index: 200;
+  position: relative;
+}
+.video__instance {
+  position: relative;
+  aspect-ratio: 16/9;
+   height: 100%;
+
+  pointer-events: all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+  border: solid 1px black;
+}
+.video__instance img {
+  position: relative;
+  aspect-ratio: 16/9;
+   height: 100%;
+
+  pointer-events: all;
+}
+
+.video__tools{
+  position: absolute;
+  width: 99%;
+  height: 120%;
+  top: -10%;
+  left: 0.5%;
+  display: flex;
+
+  z-index: 150;
+}
+.video__upper{
+  position: absolute;
+  height: 8%;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+.video__type{
+  height: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+@media (min-width:1060px) {
+  .video__title{
+    font-size: 22px;
+  }
+}
+
+.video__back{
+  pointer-events: all;
+  height: 80%;
+  cursor: pointer;
+  background-color: aliceblue;
+  border-radius: 16px 16px 16px 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transition: all 0.2s ease 0s;
+}
+.video__back:hover{
+  transform: translateX(3px);
+}
+.video__back div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  height: 100%;
+}
+.video__back div span {
+  white-space: nowrap;
+  text-align: end;
+  font-weight: 500;
+  font-size: 12px;
+  padding-right: 16px;
+  padding-left: 10px;
+  /* font-size: 18px; */
+
+}
+.video__back svg{
+  height: 70%;
+  padding-right: 12px;
+
+}
+@media (min-width:1300px) {
+  .video__back div span{
+    font-size: 18px;
+  }
+}
+@media (min-width:1950px) {
+  .video__back div span{
+    font-size: 22px;
+  }
+}
+
+
+
+.video__down{
+  position: absolute;
+  height: 5%;
+  top: 93%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+
+}
+.video__button{
+  padding: 8px;
+  background-color: white;
+  pointer-events: all;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  border-radius: 7px;
+
+  transition: all 0.2s ease 0s;
+
+  display: none;
+}
+.video__button:hover{
+  transform: translateX(3px);
+}
+
+.video__button div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: relative;
+  padding: 0 3px 0 16px;
+
+  pointer-events: none
+}
+
+.video__button div .circle{
+  position: absolute;
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: chartreuse;
+  border: solid 1px black;
+  left: 1px;
+  top: 0;
+}
+
+
+
+@media (min-width:1300px) {
+  .video__button{
+  font-size: 14px;
+  }
+  .video__button div{
+    padding: 0 3px 0 20px;
+  }
+  
+  .video__button div .circle{
+    width: 14px;
+    height: 14px;
+  }
+}
+@media (min-width:1950px) {
+  .video__button{
+  font-size: 18px;
+  }
+  .video__button div{
+    padding: 0 3px 0 24px;
+  }
+
+  .video__button div .circle{
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.video__button-hidden .circle{
+  background-color: rgb(161, 161, 161)!important;
+}
+.video__title{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+
+
+
+._hidden{
+  display: none;
+}

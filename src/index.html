@@ -1,0 +1,129 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./css/null.css" rel="stylesheet"/>
+
+  <link href="./css/loader.css" rel="stylesheet"/>
+  <link href="./css/index.css" rel="stylesheet"/>
+  <script src="./custom.js" defer></script>
+  <title>TrackerVT</title>
+</head>
+
+<body>
+
+  <div class="application">
+
+    <div class="header">
+          <img class="header__logo" src="./images/era.png" alt="#">
+          <h1 class="header__desk"><span>Приложение</span> <span>«Трекер ВТ»</span></h1>
+          <div class="header__clicker" title="На начальный экран"></div>
+    </div>
+     
+
+    <div class="generalLoader slice" id='0'>
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+      <span>Загрузка пакетов приложения</span>
+    </div>
+
+    <div class="intro slice _hidden" id='1'>
+      <h2 class="intro__description">Режимы работы приложения:</h2>
+      <div class="blocks">
+        
+        
+        <div class="block stream">
+          <h3 class='block_title'>Анализ в реальном времени </h3>
+          <div class="iconBlock">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="32" d="M434.67 285.59v-29.8c0-98.73-80.24-178.79-179.2-178.79a179 179 0 0 0-140.14 67.36m-38.53 82v29.8C76.8 355 157 435 256 435a180.45 180.45 0 0 0 140-66.92"></path><path fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="32" d="m32 256 44-44 46 44m358 0-44 44-46-44"></path></svg>
+          </div>
+          <div class="inputwrapper inputStream">
+            <label id='button_input_file'>Передайте ссылку на видеопоток(стрим)</label>
+            <input id="button_input_file" class='inputStream-item' placeholder="http://"/>
+            <button class="inputStream-button" id="button_input_file" >Запуск анализа</button>
+          </div>
+        </div>
+        
+        <div class="block file">
+          <h3 class='block_title'>Анализ по видео</h3>
+          <div class="iconBlock">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="32" d="M176 176v-40a40 40 0 0 1 40-40h208a40 40 0 0 1 40 40v240a40 40 0 0 1-40 40H216a40 40 0 0 1-40-40v-40"></path><path fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="32" d="m272 336 80-80-80-80M48 256h288"></path></svg>
+          </div>
+          <div class="inputwrapper inputFile">
+            <label id='input_file'>Выберете видеофайл (.avi, .mp4)</label>
+            <input type="file" id='input_file' class="inputFile-item" accept='video/*'/>
+            <button class="inputFile-button" id="button_input_file" >Запуск анализа</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer">
+        <h4 class="footer__desk">Комплекс программного обеспечения <span>«Трекер ВТ»</span> для обнаруженния 
+          целей военных объектов на заданном видеопотоке съемки с камеры беспилотных летательных аппаратов. Произведено в Военном Инновационном Технополисе <span>«Эра»</span>.</h1>
+      </div>
+    </div>
+
+    <div class="video slice _hidden" id='2'>
+      <div class="video__wrapper">
+        <!-- <video controls>
+          <source type="video/webm" />
+          <source type="video/mp4" />
+        </video > -->
+        <div class="video__instance">
+          <img id="video_localhost"  alt="Загрузка">
+        </div>
+
+        <div class="video__tools">
+
+          <div class="video__upper">
+
+            <div class="video__type">
+              Анализ
+            </div>
+            <div class="video__back">
+              <div>
+                <span>На главную</span>
+                <span>страницу</span>
+              </div>
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="m112 352-64-64 64-64"></path><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M64 288h294c58.76 0 106-49.33 106-108v-20"></path></svg>
+            </div>
+          </div>
+          <div class="video__down" >
+            <div class="video__button video__inform-title">
+              <div>
+                <span class="circle"></span>
+                <span>Скрыть</span>
+              </div>
+              название ролика
+            </div>
+
+            <div class="video__button video__inform-table">
+              <div>
+                <span class="circle"></span>
+                <span>Скрыть</span>
+              </div>
+              сводную таблицу
+            </div>
+
+            <div class="video__button video__inform-time">
+              <div class="video__button-hidden">
+                <span class="circle"></span>
+                <span>Показать</span>
+              </div>
+              дата/время съемки
+            </div>
+            <div class="video__title">
+              Title of video.mp4
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="loaderSlice slice _hidden" id='3'>
+      <div class="loader"></div>
+      <span>Загрузка</span>
+    </div>
+
+  </div>
+<body>
